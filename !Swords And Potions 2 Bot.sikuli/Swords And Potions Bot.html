@@ -1,0 +1,212 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }  
+         
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>!Swords And Potions 2 Bot.sikuli\Swords And Potions Bot.sikuli</h2> <a href="!Swords And Potions 2 Bot.sikuli\Swords And Potions Bot.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+x=<span class="dig">1</span>
+setAutoWaitTimeout(<span class="dig">3</span>)
+<span class="kw">import</span> time
+
+druid=<span class="str">"ShopKeeper.PNG"</span>
+druid1=<span class="str">"ClericalMark.PNG"</span>
+druid2=<span class="str">"ShockDarts.PNG"</span>
+druid3=<span class="str">"SoftBoots.PNG"</span>
+
+blacksmith=<span class="str">"Sorceress.PNG"</span>
+blacksmith1=<span class="str">"MagicScrol-1.PNG"</span>
+blacksmith2=<span class="str">"LuckyScroll.PNG"</span>
+blacksmith3=<span class="str">"FortuneScroll.PNG"</span>
+
+shopkeeper=<span class="str">"BlackSmith.PNG"</span>
+shopkeeper1=<span class="str">"PoleAxe.PNG"</span>
+shopkeeper2=<span class="str">"PurseOpener.PNG"</span>
+shopkeeper3=<span class="str">"SoldierSword.PNG"</span>
+
+carpenter=<span class="str">"LeatherWorker-1.PNG"</span>
+carpenter1=<span class="str">"Barbarian Chainmail.PNG"</span>
+carpenter2=<span class="str">"FurArmor.PNG"</span>
+carpenter3=<span class="str">"SoldierHelmet.PNG"</span>
+
+<span class="skw">doubleClick</span>(<span class="str">"RestartFile2.PNG"</span>)
+time.<span class="skw">sleep</span>(<span class="dig">6</span>)
+<span class="kw">if</span> exists(<span class="str">"BigRestartErr-1.PNG"</span>):
+        <span class="skw">click</span>(Pattern(<span class="str">"BigRestartErr-2.PNG"</span>).targetOffset(-<span class="dig">1</span>,<span class="dig">181</span>))
+
+<span class="kw">while</span> x==<span class="dig">1</span>:
+    <span class="kw">if</span> exists(<span class="str">"AreUHuman-1.PNG"</span>):
+                <span class="skw">click</span>(Pattern(<span class="str">"FireFoxOpened-2.PNG"</span>).targetOffset(<span class="dig">579</span>,-<span class="dig">49</span>))
+                time.<span class="skw">sleep</span>(<span class="dig">6</span>)
+                <span class="skw">doubleClick</span>(<span class="str">"FireFoxBrowser-1.PNG"</span>)
+                time.<span class="skw">sleep</span>(<span class="dig">6</span>)
+                <span class="skw">click</span>(Pattern(<span class="str">"FireFoxOpened-3.PNG"</span>).targetOffset(<span class="dig">297</span>,<span class="dig">48</span>))
+                time.<span class="skw">sleep</span>(<span class="dig">8</span>)
+                <span class="skw">dragDrop</span>(Pattern(<span class="str">"ScrollTest-2.PNG"</span>).targetOffset(<span class="dig">0</span>,-<span class="dig">100</span>),Pattern(<span class="str">"ScrollTest-3.PNG"</span>).targetOffset(<span class="dig">0</span>,<span class="dig">27</span>))
+    <span class="kw">if</span> exists(Pattern(<span class="str">"Summary.PNG"</span>).targetOffset(<span class="dig">381</span>,<span class="dig">220</span>)):
+        <span class="skw">click</span>(Pattern(<span class="str">"Summary.PNG"</span>).targetOffset(<span class="dig">381</span>,<span class="dig">220</span>))
+    <span class="kw">if</span> exists(<span class="str">"OpenShop.PNG"</span>):
+        <span class="skw">click</span>(<span class="str">"OpenShop.PNG"</span>)
+
+    <span class="kw">if</span> druid1 != <span class="dig">0</span>:
+        <span class="kw">if</span> exists(druid):
+                        <span class="skw">click</span>(druid)
+                        <span class="skw">click</span>(druid1)
+                        <span class="kw">if</span> exists(<span class="str">"CompMissing.PNG"</span>):
+                                <span class="skw">click</span>(<span class="str">"RedX.PNG"</span>)
+                                <span class="kw">if</span> druid2 == <span class="dig">0</span>:
+                                        <span class="skw">click</span>(<span class="str">"CloseMenu.PNG"</span>)
+                                <span class="kw">else</span>:
+                                        <span class="skw">click</span>(druid2)
+                                        <span class="kw">if</span> exists(<span class="str">"CompMissing.PNG"</span>):
+                                                <span class="skw">click</span>(<span class="str">"RedX.PNG"</span>)
+                                                <span class="kw">if</span> druid3 == <span class="dig">0</span>:
+                                                        <span class="skw">click</span>(<span class="str">"CloseMenu.PNG"</span>)
+                                                <span class="kw">else</span>:
+                                                        <span class="skw">click</span>(druid3)
+                                                        <span class="kw">if</span> exists(<span class="str">"CompMissing.PNG"</span>):
+                                                                <span class="skw">click</span>(<span class="str">"RedX.PNG"</span>)
+                                                                <span class="skw">click</span>(<span class="str">"CloseMenu.PNG"</span>)
+    <span class="kw">if</span> blacksmith1 != <span class="dig">0</span>:
+        <span class="kw">if</span> exists(blacksmith):
+            <span class="skw">click</span>(blacksmith)
+            <span class="skw">click</span>(blacksmith1)
+            <span class="kw">if</span> exists(<span class="str">"CompMissing.PNG"</span>):
+                        <span class="skw">click</span>(<span class="str">"RedX.PNG"</span>)
+                        <span class="kw">if</span> blacksmith2 == <span class="dig">0</span>:
+                            <span class="skw">click</span>(<span class="str">"CloseMenu.PNG"</span>)
+                        <span class="kw">if</span> blacksmith2 != <span class="dig">0</span>:
+                                        <span class="skw">click</span>(blacksmith2)
+                                        <span class="kw">if</span> exists(<span class="str">"CompMissing.PNG"</span>):
+                                                <span class="skw">click</span>(<span class="str">"RedX.PNG"</span>)
+                                                <span class="kw">if</span> blacksmith3 == <span class="dig">0</span>:
+                                                        <span class="skw">click</span>(<span class="str">"CloseMenu.PNG"</span>)
+                                                <span class="kw">if</span> blacksmith3 != <span class="dig">0</span>:
+                                                        <span class="skw">click</span>(blacksmith3)
+                                                        <span class="kw">if</span> exists(<span class="str">"CompMissing.PNG"</span>):
+                                                                <span class="skw">click</span>(<span class="str">"RedX.PNG"</span>)
+                                                                <span class="skw">click</span>(<span class="str">"CloseMenu.PNG"</span>)
+    <span class="kw">if</span> shopkeeper1 != <span class="dig">0</span>:
+        <span class="kw">if</span> exists(shopkeeper):
+            <span class="skw">click</span>(shopkeeper)
+            <span class="skw">click</span>(shopkeeper1)
+            <span class="kw">if</span> exists(<span class="str">"CompMissing.PNG"</span>):
+                        <span class="skw">click</span>(<span class="str">"RedX.PNG"</span>)
+                        <span class="kw">if</span> shopkeeper2 == <span class="dig">0</span>:
+                            <span class="skw">click</span>(<span class="str">"CloseMenu.PNG"</span>)
+                        <span class="kw">if</span> shopkeeper2 != <span class="dig">0</span>:
+                                        <span class="skw">click</span>(shopkeeper2)
+                        <span class="kw">if</span> exists(<span class="str">"CompMissing.PNG"</span>):
+                                                <span class="skw">click</span>(<span class="str">"RedX.PNG"</span>)
+                                                <span class="kw">if</span> shopkeeper3 == <span class="dig">0</span>:
+                                                        <span class="skw">click</span>(<span class="str">"CloseMenu.PNG"</span>)
+                                                <span class="kw">if</span> shopkeeper3 != <span class="dig">0</span>:
+                                                        <span class="skw">click</span>(shopkeeper3)
+                                                        <span class="kw">if</span> exists(<span class="str">"CompMissing.PNG"</span>):
+                                                                        <span class="skw">click</span>(<span class="str">"RedX.PNG"</span>)
+                                                                        <span class="skw">click</span>(<span class="str">"CloseMenu.PNG"</span>)
+    <span class="kw">if</span> carpenter1 != <span class="dig">0</span>:
+        <span class="kw">if</span> exists(carpenter):
+                        <span class="skw">click</span>(carpenter)
+                        <span class="skw">click</span>(carpenter1)
+                        <span class="kw">if</span> exists(<span class="str">"CompMissing.PNG"</span>):
+                                <span class="skw">click</span>(<span class="str">"RedX.PNG"</span>)
+                                <span class="kw">if</span> carpenter2 == <span class="dig">0</span>:
+                                        <span class="skw">click</span>(<span class="str">"CloseMenu.PNG"</span>)
+                                <span class="kw">if</span> carpenter2 != <span class="dig">0</span>:
+                                        <span class="skw">click</span>(carpenter2)
+                                        <span class="kw">if</span> exists(<span class="str">"CompMissing.PNG"</span>):
+                                                <span class="skw">click</span>(<span class="str">"RedX.PNG"</span>)
+                                                <span class="kw">if</span> carpenter3 == <span class="dig">0</span>:
+                                                        <span class="skw">click</span>(<span class="str">"CloseMenu.PNG"</span>)
+                                                <span class="kw">if</span> carpenter3 != <span class="dig">0</span>:
+                                                        <span class="skw">click</span>(carpenter3)
+                                                        <span class="kw">if</span> exists(<span class="str">"CompMissing.PNG"</span>):
+                                                                <span class="skw">click</span>(<span class="str">"RedX.PNG"</span>)
+                                                                <span class="skw">click</span>(<span class="str">"CloseMenu.PNG"</span>)
+    <span class="kw">if</span> exists(<span class="str">"CloseBTN.PNG"</span>):
+        <span class="skw">click</span>(<span class="str">"CloseBTN.PNG"</span>)
+    <span class="kw">if</span> exists(<span class="str">"SmallX.PNG"</span>):
+        <span class="skw">click</span>(<span class="str">"SmallX-1.PNG"</span>)
+    <span class="kw">if</span> exists(<img src="done.png" />):
+        <span class="skw">click</span>(<img src="done.png" />)
+    <span class="kw">if</span> exists(<span class="str">"BigNext.PNG"</span>):
+                <span class="skw">click</span>(<span class="str">"BigNext.PNG"</span>)
+    <span class="kw">if</span> exists(<span class="str">"OK.PNG"</span>):
+        <span class="skw">click</span>(<span class="str">"OK.PNG"</span>)
+    <span class="kw">if</span> exists(<span class="str">"CloseMenu.PNG"</span>):
+        <span class="skw">click</span>(<span class="str">"CloseMenu.PNG"</span>)
+    <span class="kw">if</span> exists(<span class="str">"Spin.PNG"</span>):
+                <span class="skw">click</span>(<span class="str">"Spin.PNG"</span>)
+                <span class="skw">wait</span>(<span class="str">"SpinClose.PNG"</span>)
+                <span class="skw">click</span>(<span class="str">"SpinClose.PNG"</span>)
+    <span class="kw">if</span> exists(<span class="str">"EndProg.PNG"</span>):
+        x = <span class="dig">0</span>
+</pre>
+</body>
+</html>
